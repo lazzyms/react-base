@@ -1,9 +1,23 @@
 import { USER_LOGIN, USER_LOGOUT } from "../actions/userActions";
+import { Cookies } from "react-cookie";
 
-export default function userReducer(
-  state = { user: null, isLoggedIn: false },
-  { type, payload }
-) {
+function initState() {
+  let cookie = new Cookies();
+  let user = cookie.get("user");
+  if (user) {
+    return {
+      user: user,
+      isLoggedIn: true,
+    };
+  } else {
+    return {
+      user: null,
+      isLoggedIn: false,
+    };
+  }
+}
+
+export default function userReducer(state = initState, { type, payload }) {
   switch (type) {
     case USER_LOGIN:
       return payload;
@@ -13,5 +27,3 @@ export default function userReducer(
       return state;
   }
 }
-
-

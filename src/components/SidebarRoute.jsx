@@ -20,14 +20,15 @@ class SidebarRoute extends Component {
         variant="light"
         className="flex-column h-100"
       >
-        <Navbar.Brand to="/" className="mt-3">
+        <Navbar.Brand to="/" className="mt-1">
           Title | Logo
         </Navbar.Brand>
-        <Nav className="flex-column pl-2" style={{ width: "150px" }}>
+        <hr className="bg-dark text-white" />
+        <Nav className="flex-column pl-2 pt-5" style={{ width: "150px" }}>
           <LinkContainer to="/">
             <Nav.Link>
               <Row style={{ fontSize: "16px" }}>
-                <FontAwesomeIcon icon={faHome} size="lg" />
+                <FontAwesomeIcon icon={faHome} size="lg" inverse />
                 &nbsp;&nbsp;Home
               </Row>
             </Nav.Link>
@@ -35,7 +36,7 @@ class SidebarRoute extends Component {
           <LinkContainer to="/products">
             <Nav.Link>
               <Row style={{ fontSize: "16px" }}>
-                <FontAwesomeIcon icon={faBox} size="lg" />
+                <FontAwesomeIcon icon={faBox} size="lg" inverse />
                 &nbsp;&nbsp;Products
               </Row>
             </Nav.Link>
@@ -43,12 +44,14 @@ class SidebarRoute extends Component {
           <LinkContainer to="/users">
             <Nav.Link>
               <Row style={{ fontSize: "16px" }}>
-                <FontAwesomeIcon icon={faUser} size="lg" />
+                <FontAwesomeIcon icon={faUser} size="lg" inverse />
                 &nbsp;&nbsp;Users
               </Row>
             </Nav.Link>
           </LinkContainer>
-          <Nav.Link onClick={() => this.props.handleUserLogout()}>Logout</Nav.Link>
+          <Nav.Link onClick={() => this.props.handleUserLogout()}>
+            Logout
+          </Nav.Link>
         </Nav>
       </Navbar>
     );

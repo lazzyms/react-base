@@ -1,8 +1,12 @@
 import axios from "axios";
+import { Cookies } from "react-cookie";
+
 export const USER_LOGIN = "user:userLogin";
 export const USER_LOGOUT = "user:userLogout";
 
+let cookie = new Cookies();
 export function userLogin(newUser) {
+  cookie.set("user", newUser);
   return {
     type: USER_LOGIN,
     payload: {
@@ -13,6 +17,7 @@ export function userLogin(newUser) {
 }
 
 export function userLogout() {
+  cookie.set("user", null);
   return {
     type: USER_LOGIN,
     payload: {

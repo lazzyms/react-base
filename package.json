@@ -1,7 +1,8 @@
 {
-  "name": "react-begin",
-  "version": "0.1.0",
+  "name": "react-base",
+  "version": "1.0.0",
   "private": true,
+  "homepage": "https://me.mauliksompura.in/react-base/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-solid-svg-icons": "^5.14.0",
@@ -12,6 +13,7 @@
     "aws-amplify": "^3.0.23",
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
+    "gh-pages": "^3.1.0",
     "jquery": "^3.5.1",
     "react": "^16.13.1",
     "react-bootstrap": "^1.2.2",
@@ -27,6 +29,8 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

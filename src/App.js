@@ -27,7 +27,6 @@ const routes = [
   },
   {
     path: "/login",
-    exact: true,
     main: () => <Login />
   }
 ];
